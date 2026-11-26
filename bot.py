@@ -20,9 +20,8 @@ RSS_FEEDS = [
 sent_links = set()
 subscribers = set()
 
-if CHANNEL_ID:
-    subscribers.add(CHANNEL_ID)
-
+subscribers.add("-1005603755476")
+subscribers.add("6572250940")
 @bot.message_handler(commands=['start'])
 def handle_start(message):
     subscribers.add(str(message.chat.id))
