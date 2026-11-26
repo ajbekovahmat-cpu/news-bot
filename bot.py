@@ -55,8 +55,7 @@ def check_news():
 def home():
     return "Бот работает!"
 
-if _name_ == "_main_":
-    threading.Thread(target=check_news, daemon=True).start()
-    threading.Thread(target=lambda: bot.infinity_polling(skip_pending=True), daemon=True).start()
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
+threading.Thread(target=check_news, daemon=True).start()
+threading.Thread(target=lambda: bot.infinity_polling(skip_pending=True), daemon=True).start()
+port = int(os.environ.get("PORT", 10000))
+app.run(host="0.0.0.0", port=port)
